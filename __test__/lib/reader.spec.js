@@ -39,11 +39,8 @@ describe('Read Module', () => {
 
       expect(err).toBeUndefined();
       expect(data[0].toString().trim()).toEqual('cats aren\'t cooler than dogs');
-      console.log(data[0].toString().trim());
-      expect(data[1].toString().trim()).toEqual('dogs are the best');
-      console.log(data[1].toString().trim());
-      console.log(data[2].toString().trim());
-      expect(data[2].toString().trim()).toEqual('hello world!');
+      expect(data[1].toString().trim().toEqual('dogs are the best bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark');
+      expect(data[2].toString().trim().toEqual('hello world!');
       done();
     });
   }); 
