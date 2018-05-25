@@ -1,6 +1,5 @@
 const read = require('../../lib/reader');
 
-// const root = '03-asynchronous-callbacks/data';
 const root = __dirname + '/../..';
 
 describe('Read Module', () => {
@@ -24,7 +23,7 @@ describe('Read Module', () => {
   it('should return one file if the file array has only one item', (done) => {
 
     read([root + '/data/cats.txt'], (err, data) => {
-      expect(err).toBeUndefined();
+      expect(err).toBeNull();
       const actual = data[0].toString().trim();
       expect(actual).toEqual('cats aren\'t cooler than dogs');
       
@@ -37,10 +36,10 @@ describe('Read Module', () => {
     
     read([root + '/data/cats.txt', root + '/data/dogs.txt', root + '/data/hello.txt'], (err, data) => {
 
-      expect(err).toBeUndefined();
-      expect(data[0].toString().trim()).toEqual('cats aren\'t cooler than dogs');
-      expect(data[1].toString().trim()).toEqual('dogs are the best bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark');
-      expect(data[2].toString().trim().toEqual('hello world!');
+      expect(err).toBeNull();
+      expect(data[0]).toEqual('cats aren\'t cooler than dogs');
+      expect(data[1]).toEqual('dogs are the best bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark bark');
+      expect(data[2]).toEqual('hello world!');
       done();
     });
   }); 
