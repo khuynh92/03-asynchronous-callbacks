@@ -1,1 +1,0 @@
-const read = require('../lib/reader');
